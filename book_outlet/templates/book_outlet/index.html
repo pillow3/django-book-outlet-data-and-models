@@ -3,6 +3,7 @@
 {% block title %}All Books{% endblock title %}
 
 {% block body %}
+    <h1>List of books</h1>
     <ul>
         {% for book in books %}
             <li>{{ book.title }} (Rating: {{ book.rating }})</li>
