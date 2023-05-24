@@ -14,7 +14,7 @@ class Book(models.Model):
     slug = models.SlugField(default="", null=False) 
 
     def get_absolute_url(self):
-        return reverse("book-detail", args=[self.id])
+        return reverse("book-detail", args=[self.slug])
     
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)  # slugify transform text to a slug > "Harry Potter 1" = "harry-potter-1"
@@ -23,6 +23,3 @@ class Book(models.Model):
 
     def __str__(self):
         return f"{self.title} ({self.rating})"
-
-
-
